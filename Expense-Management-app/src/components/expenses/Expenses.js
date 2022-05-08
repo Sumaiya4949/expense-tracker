@@ -4,6 +4,7 @@ import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
 import { ExpenseList } from "./ExpenseList";
 import { Fragment } from "react/cjs/react.production.min";
+import { ExpenseChart } from "./ExpenseChart";
 
 const Expenses = (props) => {
   const { items } = props;
@@ -24,6 +25,7 @@ const Expenses = (props) => {
   return (
     <Fragment>
       <Card className="expenses">
+        <ExpenseChart expenses={filteredExpense} />
         <ExpensesFilter
           onYearChange={yearChangeHandler}
           selectedYear={filteredYear}
